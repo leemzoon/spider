@@ -21,7 +21,8 @@ def send_email(from_addr, to_addr, subject, body):
     server.quit()
 
 def notice():
+    title = open('log/article-list.txt').readline().strip()
     for recv in conf["TO"]:
-        send_email(conf["FROM"], recv, "New Message", "News from poloniex.")
+        send_email(conf["FROM"], recv, title, "News from poloniex.")
 
 
